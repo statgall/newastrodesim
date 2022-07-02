@@ -18,10 +18,12 @@ from astrodesim import make_image as im
 
 def map(file1, file2):
     """
-    Function outputs a dust emission spectral index map
+    Function takes two FITS files of the same object at different wavelengths
+    and outputs a dust emission spectral index map
 
     Args: 
-        files (FeedMeFiles): paths to file1 and file2
+        file1 (str): path to FITS file1 of object observed at one wavelength
+        file2 (str): path to FITS file2 of same object observed at a different wavelength
     """
     header1, sim_data1 = fits.upload_fits(file1) 
     header2, sim_data2 = fits.upload_fits(file2)
