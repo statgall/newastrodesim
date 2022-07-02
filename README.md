@@ -1,2 +1,2 @@
 # newastrodesim
-Make dust emission spectral index maps
+Makes dust emission spectral index maps
