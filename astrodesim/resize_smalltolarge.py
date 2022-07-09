@@ -37,22 +37,25 @@ def resize_smalltolarge(im1, deltapix1, new_dim, deltapix2):
         # np.pad() takes image1, adds extra pixels and fills them with zeros
         temp_matrix = np.pad(im1, pad_with, 'constant', constant_values=const_val)
         
-    # Creates the coordinates of the temporary matrix with pixel size: deltapix1
-    temp_width = len(temp_matrix) # in pixels
-    temp_halfwidth = temp_width/2.*deltapix1 # in deg
+        # Creates the coordinates of the temporary matrix with pixel size: deltapix1
+        temp_width = len(temp_matrix) # in pixels
+        temp_halfwidth = temp_width/2.*deltapix1 # in deg
     
-    xcoords = np.linspace(-temp_halfwidth, temp_halfwidth, temp_width)
-    ycoords = np.linspace(-temp_halfwidth, temp_halfwidth, temp_width) # update for images of different length
+        xcoords = np.linspace(-temp_halfwidth, temp_halfwidth, temp_width)
+        ycoords = np.linspace(-temp_halfwidth, temp_halfwidth, temp_width) # update for images of different length
 
-    # Associates the coordinates to the temporary matrix
-    temp_im = interp2d(xcoords, ycoords, temp_matrix)
+        # Associates the coordinates to the temporary matrix
+        temp_im = interp2d(xcoords, ycoords, temp_matrix)
 
-    # Creates the coordinates of the resized image
-    new_halfdim = new_dim/2.*deltapix2 # in deg
+        # Creates the coordinates of the resized image
+        new_halfdim = new_dim/2.*deltapix2 # in deg
     
-    new_xcoords = new_ycoords = np.linspace(-new_halfdim, new_halfdim, new_dim)
+        new_xcoords = new_ycoords = np.linspace(-new_halfdim, new_halfdim, new_dim)
 
-    # Interpolates the temporary matrix into the final resized image
-    new_im = np.array(temp_im(new_xcoords, new_ycoords))
+        # Interpolates the temporary matrix into the final resized image
+        new_im = np.array(temp_im(new_xcoords, new_ycoords))
     
+    else:
+        new_im = im1
+        
     return new_im

@@ -22,8 +22,8 @@ def spectral_index_conversion(flux1, flux2, wavelength1, wavelength2):
     if flux2 <= 0:
         flux2 = flux_replacement
 
-    flux_rat = math.log10(flux1/flux2)
-    wavelength_rat = math.log10(wavelength2/wavelength1)
-    alpha = flux_rat/wavelength_rat 
+    flux_rate = math.log10(flux1/flux2)
+    wavelength_rate = math.log10(wavelength2/wavelength1)
+    alpha = flux_rate/wavelength_rate 
 
     return alpha

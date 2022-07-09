@@ -4,18 +4,6 @@ from astrodesim import resize_smalltolarge as resize
 from astrodesim import spectral_index_map as alpha
 from astrodesim import make_image as im
 
-#class FeedMeFiles(object):
-#    """
-#    Class contains two fits files of the same image at different wavelengths
-
-#    Args:
-#        file1 (str): path to fits file with image at one wavelength
-#        file2 (str): path to fits file with same image at another wavelength 
-#    """
-#    def __init__(self, file1, file2):
-#        self.file1 = file1
-#        self.file2 = file2
-
 def map(file1, file2):
     """
     Function takes two FITS files of the same object at different wavelengths

@@ -1,7 +1,7 @@
 def is_small(im1, im2, header1, header2):
     """ 
-        Fuction determines which image has the least amount of pixels
-        And, initiates necessary parameters for the resize function
+        Fuction determines which of two images has the least amount of pixels
+        and initializes necessary variables for the resize function
 
         Args: 
             im1 (numpy.ndarray): data for first image
@@ -10,12 +10,12 @@ def is_small(im1, im2, header1, header2):
             header2 (astropy.io.fits.header.Header): fits file header for second image
 
         Returns: 
-            small_im (numpy.ndarray): smallest image data, 
-            deltapix1 (float): pixel thickness (deg/pix) of smallest image,
-            smallhead (astropy.io.fits.header.Header): header file of smallest image,
-            big_im (numpy.ndarray): largest image data,
-            new_dim (int): largest image length along x-direction in pixels,
-            deltapix2 (float): pixel thickness (deg/pix) of largest image,
+            small_im (numpy.ndarray): smallest image data
+            deltapix1 (float): pixel thickness (deg/pix) of smallest image
+            smallhead (astropy.io.fits.header.Header): header file of smallest image
+            big_im (numpy.ndarray): largest image data
+            new_dim (int): largest image length along x-direction in pixels
+            deltapix2 (float): pixel thickness (deg/pix) of largest image
             bighead (astropy.io.fits.header.Header): header file of largest image
     """
     # NEED TO RESOLVE CASE FOR SIZE1 == SIZE2
